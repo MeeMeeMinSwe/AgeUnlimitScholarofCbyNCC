@@ -1,0 +1,53 @@
+#include<stdio.h>
+int main(){
+char name=0;
+int ID=0;
+int money=0;
+int level=0;
+int a=0;
+printf("Thank U for shopping with us\n");
+printf("Please enter yr name:");
+scanf("%c",&name);
+
+
+while(a==0){
+    printf("please enter yr paying amount:");
+    scanf("%d",&money);
+
+if(money>=50000){
+    printf("We have a promotion for u.\nif u r member,please enter yr ID:");
+    scanf("%d",&ID);}
+    else{
+    printf("This is yr check.\nHave a wonderful day.");
+    break;
+    }
+    if(ID!=000){
+        printf("sorry!yr ID is not correct\n");
+    }
+while(ID==000){
+    printf("Please enter yr member level:");
+    scanf("%d",&level);
+switch(level){
+case 1:
+    money=money-(money*.05);
+    printf("U cost only %d ks\n",money);
+break;
+case 2:
+    money=money-(money*.1);
+    printf("U cost only %d ks\n",money);
+break;
+case 3:
+    money=money-(money*.2);
+    printf("U cost only %d ks\n",money);
+break;
+default:
+    printf("Yr data is invalid");
+
+}
+printf("Have a wonderful day.\nThank U");
+break;
+}
+break;
+}
+
+return 0;}
