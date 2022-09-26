@@ -1,0 +1,58 @@
+#include "stdio.h"
+#include "stdlib.h"
+int functionToFindData(int iid,char uusername,int ppassword,int aamount);
+int main(){
+    unsigned int id;
+        char username[50];
+        int password;
+
+        int amount;
+    FILE *fptr;
+int a=0;
+printf("If u want to insert data,Press 1:\nIf u want to find data,Press 2:\nIf u want to change data,Press 3:\n");
+scanf("%d",&a);
+if(a==1){
+    printf("u can input data now\n");
+if((fptr=fopen("client5.txt","a"))==NULL){
+    puts("File cannot open!");
+    exit (1);}
+
+    else{
+        puts("please enter id username password balance");
+        puts("enter end of file input");
+        printf(">:");
+
+        scanf("%d%s%d%d",&id,&username,&password,&amount);
+
+
+        while(!feof(stdin)){        
+
+            fprintf(fptr,"%d%5s%5d%5d%c",id ,username ,password ,amount,'\n');
+            printf(">:");   
+            scanf("%d%s%d%d",&id,&username,&password,&amount);
+
+        }}
+  if(a==2){
+        printf("please enter a username u want to know");
+        scanf("%s",&username);
+functionToFindData(id,username,password,amount);
+    }
+fclose(fptr);
+return 0;}}
+int functionToFindData(int iid,char uusername,int ppassword,int aamount)
+{
+ FILE *fptr;
+
+if((fptr=fopen("client5.txt","r"))==NULL){
+    puts("File cannot open!");
+    exit (1);}
+    while (1){
+    fscanf(fptr,"%s",&uusername);
+      printf("%s",uusername);
+      if(fscanf(fptr,"%d",&uusername)!=EOF){
+       fprintf("%5d%5s%5d%5d",iid,uusername,ppassword,aamount);
+      }
+    }
+    fclose(fptr);
+return uusername;
+}
