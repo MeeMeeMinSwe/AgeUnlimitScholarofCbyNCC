@@ -56,3 +56,4 @@ if((fptr=fopen("client5.txt","r"))==NULL){
     fclose(fptr);
 return uusername;
 }
+//thanks
